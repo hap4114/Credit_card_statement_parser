@@ -1,1 +1,16 @@
-
+{
+  "build": {
+    "builder": "HEROKU_BUILDPACKS"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku-community/apt"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "deploy": {
+    "startCommand": "streamlit run app.py --server.port $PORT --server.address 0.0.0.0"
+  }
+}
